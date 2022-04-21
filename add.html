@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="add">
+        <input type="text" value="1,5,6">输入数字求和，数字之间用“，”号隔开
+        <!-- <p> -->
+            <button>求和</button>
+            <b id="num"></b>
+        <!-- </p> -->
+    </div>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oInput = document.getElementsByTagName("input")[0];
+            var oSum = document.getElementById("num");
+            oInput.onkeyup = function () {
+                this.value = this.value.replace(/[^(\d)|(,)]/, "");
+            }
+            oBtn.onclick = function () {
+                var sum = 0;
+                var oInput = document.getElementsByTagName("input")[0].value.split(",");
+                for (var i in oInput) {
+                    sum += parseInt(oInput[i]);
+                }
+                oSum.innerHTML = sum;
+                // console.log(123);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
