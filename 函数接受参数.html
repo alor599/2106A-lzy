@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" value="北京市" name="mins">
+        <input type="text" value="朝阳区" name="mins">
+        <input type="button" value="提交" onclick="c_add()">
+    </div>
+    <script type="text/javascript">
+        function c_add() {
+            var name = document.getElementsByName('mins')
+            for (let index = 0; index < name.length; index++) {
+                // const element = array[index];
+                alert(name[index].value)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

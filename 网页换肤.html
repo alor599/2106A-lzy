@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页换肤</title>
+    <style type="text/css">
+        #add_1 {
+            width: 1080px;
+            height: 10000px;
+            background-color: #fff;
+        }
+
+        #add {
+            width: 100%;
+            height: 100%;
+        }
+
+        .red {
+            background-color: #fff;
+            /* background-color: green; */
+            /* background-color: aliceblue; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="add_1">
+        <div id="add">
+            <input type="button" class="red" value="红色" onclick="c_red()">
+            <input type="button" class="red" value="绿色" onclick="c_green()">
+            <input type="button" class="red" value="黑色" onclick="c_aliceblue()">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var add = document.getElementById('add')
+
+        function c_red() {
+            add.style.backgroundColor = 'red'
+        }
+        function c_green() {
+            add.style.backgroundColor = 'green'
+        }
+        function c_aliceblue() {
+            add.style.backgroundColor = 'aliceblue'
+        }
+    </script>
+</body>
+
+</html>

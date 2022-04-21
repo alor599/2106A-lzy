@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:hover{
+            background-color: pink;
+            color: white;
+        }
+        ul{
+            display: none;
+        }
+        li{
+            width: 50px;
+            height: 30px;
+            background-color: antiquewhite;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="输入法" id="mins">
+    <ul id="li">
+        <li>简写</li>
+        <li>拼音</li>
+        <li id="lis">关闭</li>
+    </ul>
+    <script>
+        var mins=document.getElementById("mins")
+        var li=document.getElementById('li')
+        var lis=document.getElementById('lis')
+        mins.onclick=function(){
+            // li.style.visibility="block"
+            if(li.style.display!="block"){
+                li.style.display="block"
+            }else{
+                li.style.display="none"
+            }
+        }
+        lis.onclick=function(){
+            li.style.display="none"
+        }
+    </script>
+</body>
+</html>
