@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 100%;
+            margin: 10px auto;
+            text-align: center;
+            font: 12px/1.5;
+        }
+
+        #sum {
+            margin: 10px;
+            display: inline;
+            color: rgb(190, 16, 45);
+        }
+
+        #first,
+        #second {
+            margin: 0 10px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <input type="text" id="first">+<input type="text" id="second">=<div id="sum">?</div><input type="button"
+            value="求和">
+    </div>
+
+    <script>
+        window.onload = function () {
+            var oInput = document.getElementsByTagName("input");
+            for (var i = 0; i < 2; i++) {
+                oInput[i].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d|","]/, "");
+                }
+                oInput[2].onclick = function () {
+                    var alor = document.getElementById("first").value;
+                    var asd = document.getElementById("second").value;
+                    var oSum = document.getElementById("sum");
+                    var sum = 0
+                    console.log(oSum);
+                    sum += parseInt(alor) + parseInt(asd);
+                    oSum.innerHTML = sum;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
