@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font: 12px/1.5 Tahoma;
+        }
+
+        #tab,
+        #div1 {
+            border: 1px solid black;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #tab {
+            border-bottom: 0;
+            background: black;
+            color: white;
+        }
+
+        #tab li {
+            width: 60px;
+            float: left;
+            list-style-type: none;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        #tab li.current {
+            background: white;
+            color: black;
+        }
+
+        #div1 ul {
+            padding: 10px 0 0 30px;
+            display: none;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="tab">
+        <li class="current">第一节课</li>
+        <li>第二节课</li>
+        <li>第三节课</li>
+    </ul>
+    <div id="div1">
+        <ul style="display:block;">
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+        </ul>
+        <ul>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+        </ul>
+        <ul>
+            <li>特效原理分析特效原理分析特效原理分析特效原理分析特效原理分析特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+            <li>特效原理分析</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            var oLi = document.getElementById("tab").getElementsByTagName("li");
+            var oUl = document.getElementById("div1").getElementsByTagName("ul");
+            console.log(this);
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].index = i;
+
+                oLi[i].onmouseover = function () {
+                    for (var n = 0; n < oLi.length; n++) oLi[n].className = "";
+                    console.log(this);
+                    this.className = "current";
+
+                    for (var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+                    console.log(this.index);
+                    oUl[this.index].style.display = "block";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
